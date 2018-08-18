@@ -1,0 +1,27 @@
+Package: esyr
+Type: Package
+Title: Provides a few useful analysis and reporting functions and my personal database
+Version: 0.1.0
+Author: Ethan Young
+Maintainer: Ethan Young <young.ethan.scott@gmail.com>
+Description: This is my personal R-package. I found that I often load functions
+    that I have personally written over and over soI decided to wrap them up in a package.
+    I hope to continue developing and adding more functions that I have found useful into this package
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: broom,
+    dplyr,
+    ggplot2,
+    haven,
+    lm.beta,
+    magrittr,
+    modelr,
+    psych,
+    purrr,
+    readr,
+    readxl,
+    stringr,
+    tibble,
+    tidyr
+RoxygenNote: 6.1.0
