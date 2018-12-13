@@ -21,7 +21,7 @@ calculate correlations with missing data. Defualt is \code{"pairwise"}.}
 coefficient to compute. Default is \code{"pearson"}}
 
 \item{stats}{defaults to NULL and does not include any descriptive statistics. Otherwise should be a
-vector of strings naming the stats that \psych{describe} outputs and will be displayed below the
+vector of strings naming the stats that \code{psych::describe} outputs and will be displayed below the
 correlation matrix}
 
 \item{c.names}{a character vector of user-provided names for the names of the variables in the table.}

@@ -8,7 +8,7 @@
 #' @param method a string, same as the argument in \code{psych::corr.table}. Indicates the type of correlation
 #'  coefficient to compute. Default is \code{"pearson"}
 #' @param stats defaults to NULL and does not include any descriptive statistics. Otherwise should be a
-#'  vector of strings naming the stats that \psych{describe} outputs and will be displayed below the
+#'  vector of strings naming the stats that \code{psych::describe} outputs and will be displayed below the
 #'  correlation matrix
 #' @param c.names a character vector of user-provided names for the names of the variables in the table.
 #' @param change logical, indicates if you would like to change the column names of the table to \code{c.names}
