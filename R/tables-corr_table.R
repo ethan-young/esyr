@@ -32,7 +32,7 @@ corr_table <- function(data,
     suppressWarnings(ifelse(...))
   }
 
-  descriptives <- psych::describe(data) %>% tibble::as_data_frame()
+  descriptives <- psych::describe(data) %>% as.data.frame()
   corr_data <- psych::corr.test(x = data, use = use, method = method)
   ns <- corr_data$n
   rs <- corr_data$r %>% round(2)
@@ -76,7 +76,7 @@ corr_table <- function(data,
     dplyr::add_row(.before=1,stat="Correlations") %>%
     dplyr::add_row(stat="Descriptives") %>%
     dplyr::mutate_at(.vars = 2:ncol(.),.funs = dplyr::funs(my_ifelse(is.na(.),"",.))) %>%
-    dplyr::bind_rows(if(flagged){descriptives %>% purrr::map(as.character)}else{descriptives})
+    dplyr::bind_rows(purrr::map(descriptives,as.character))
 
   if(change){names(corrs) <- c("Variable",c.names)}
   if(numbered){names(corrs) <- c("Variable",1:length(c.names))}
