@@ -218,9 +218,8 @@ tidy_avg_rows <- function(data, selector, reverse = NULL, show = F, mini = NULL,
           dplyr::select(data, rlang::eval_tidy(user_select)),
           dplyr::select(data, rlang::eval_tidy(user_select)) %>%
             psych::reverse.code(keys = items, items = ., mini = mini, maxi = maxi) %>%
-            dplyr::as_data_frame() %>%
-            dplyr::rename_if(stringr::str_detect(names(.),"-$"),
-                             dplyr::funs(stringr::str_remove_all(.,"-|`") %>% paste0("_r"))) %>%
+            dplyr::as_tibble() %>%
+            dplyr::rename_at(vars(ends_with("-")), dplyr::funs(stringr::str_remove_all(.,"-|`") %>% paste0("_r"))) %>%
             dplyr::select(dplyr::ends_with("r"))
         )
       )
